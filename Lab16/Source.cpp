@@ -31,7 +31,7 @@ int askUserScan()
 {
 	int choise;
 	do {
-		printf("Введите:\n1 - заполнить массив с клавиатуры\n2 - заполнить из txt\n3 - заполнить из bin\n");
+		printf("Введите:\n1 - заполнить массив с клавиатуры\n2 - заполнить из txt\n3 - заполнить из bin\nВыбор:");
 		scanf_s("%d", &choise);
 	} while (choise > 3 || choise < 1);
 	return choise;
