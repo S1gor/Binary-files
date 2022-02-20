@@ -94,20 +94,19 @@ int main()
 	switch (askUserScan())
 	{
 	case 1:
-		//int n = scanArrSize();
-		int n;
-		do {
-			printf("¬ведите размер массива от 1 до 100\n");
-			scanf_s("%d", &n);
-		} while (n > 100 || n < 1);
+	{
+		int n = scanArrSize();
 
 		for (int i = 0; i < n; i++)
 			scanStudent(mas[i]);
 		writeToBinFile("2.bin", mas, n);
 		break;
+	}
 	case 2:
+	{
 		readFileTxt("1.txt", mas, size);
 		break;
+	}
 	case 3:
 		readFileBin("2.bin", mas, size);
 		break;
