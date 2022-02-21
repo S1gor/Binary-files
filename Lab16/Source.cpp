@@ -64,8 +64,8 @@ void readFileBin(const char filename[], Student mas[], int& size)
 		exit(1);
 
 	fread(&size, sizeof(int), 1, f);
-	for (int i = 0; i < size; i++)
-		fread(&mas[i], sizeof(Student), 1, f);
+
+	fread(mas, sizeof(Student), size, f);
 
 	fclose(f);
 }
@@ -77,8 +77,9 @@ void writeToBinFile(const char filename[], Student mas[], int size)
 		exit(1);
 
 	fwrite(&size, sizeof(int), 1, f);
-	for (int i = 0; i < size; i++)
-		fwrite(&mas[i], sizeof(Student), 1, f);
+
+	fwrite(mas, sizeof(Student), size, f);
+	fclose(f);
 }
 
 int main()
